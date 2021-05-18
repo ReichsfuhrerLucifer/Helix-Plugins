@@ -32,8 +32,8 @@ PLUGIN.Schema = 'Any'
 
 if (SERVER) then
 
-    function GM:PlayerCanHearPlayersVoice( listener, speaker )
-        if ( speaker:GetData('VoiceBan') || !speaker:Alive() ) then
+    function PLUGIN:PlayerCanHearPlayersVoice( listener, speaker )
+        if ( speaker:GetData('VoiceBan') or !speaker:Alive() ) then
             return false
         end
     end
